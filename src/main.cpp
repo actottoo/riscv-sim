@@ -10,6 +10,10 @@ uint32_t get_rd(uint32_t inst){
     return ( inst >> 7 ) & 0x1F;
 }
 
+uint32_t get_rs1(uint32_t inst){
+    return (inst >> 15 ) & 0x1F;
+}
+
 uint32_t get_funct3(uint32_t inst){
     return ( inst >> 12 ) & 0x7;
 }
@@ -21,6 +25,7 @@ int main(){
         printf("opcode = 0x%02X\n", get_opcode(inst));
         printf("rd =  x%u\n", get_rd(inst));
         printf("funct3 = %u\n", get_funct3(inst));
+        printf("rs1 = x%u\n", get_rs1(inst));
         printf("---\n");
 
     }
